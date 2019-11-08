@@ -9,7 +9,7 @@ function Smurfs(props){
 
     useEffect(() => {
         props.fetchSmurfs();
-    },[]);
+    },[props.changeTrigger]);
 
     const submitForm = event => {
         event.preventDefault();
@@ -76,7 +76,8 @@ const mapStateToProps = state => {
         smurfs: state.smurfs,
         isFetching: state.isFetching,
         error: state.error,
-        isPosting: state.isPosting
+        isPosting: state.isPosting,
+        changeTrigger: state.changeTrigger
     };
 };
 

@@ -4,8 +4,8 @@ const initialState={
     smurfs: [],
     isFetching: false,
     error: '',
-    isPosting: false
-};
+    isPosting: false,
+    changeTrigger: false}
 
 function reducer(state = initialState, action) {
     // console.log("reducer", action);
@@ -43,7 +43,8 @@ function reducer(state = initialState, action) {
             return{
                 ...state,
                 isPosting: false,
-                error:''
+                error:'',
+                changeTrigger: !state.changeTrigger
             }
         
         case SMURFS_POST_FAILED:
