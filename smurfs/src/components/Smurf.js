@@ -2,9 +2,9 @@ import React from 'react';
 
 
 const Smurf = props => {
-    console.log(props.name)
-    return(
-        <p>{props.element.name}</p>
+    
+    return(        
+        <p>My name is <strong>{props.element.name}</strong>. I am {props.element.age} years old and {props.element.height} tall. <br/> I am a SMURF.</p>
     )
 }
 

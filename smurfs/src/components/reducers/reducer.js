@@ -1,9 +1,10 @@
-import {SMURFS_LOADING,SMURFS_SUCCESS,SMURFS_FAILED} from '../actions/action';
+import {SMURFS_LOADING,SMURFS_SUCCESS,SMURFS_FAILED,SMURFS_POST_LOADING,SMURFS_POST_SUCCESS,SMURFS_POST_FAILED} from '../actions/action';
 
 const initialState={
     smurfs: [],
     isFetching: false,
-    error: ''
+    error: '',
+    isPosting: false
 };
 
 function reducer(state = initialState, action) {
@@ -28,6 +29,27 @@ function reducer(state = initialState, action) {
             return{
                 ...state,
                 isFetching: false,
+                error: action.payload
+            }
+
+        case SMURFS_POST_LOADING:
+            return{
+                ...state,
+                isPosting: true,
+                error:''
+            }
+
+        case SMURFS_POST_SUCCESS:
+            return{
+                ...state,
+                isPosting: false,
+                error:''
+            }
+        
+        case SMURFS_POST_FAILED:
+            return{
+                ...state,
+                isPosting: false,
                 error: action.payload
             }
         
