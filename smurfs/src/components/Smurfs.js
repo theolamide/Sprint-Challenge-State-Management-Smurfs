@@ -2,6 +2,8 @@ import React, {useEffect,useState} from 'react'
 import {connect} from 'react-redux';
 import Smurf from "./Smurf";
 import {fetchSmurfs,postSmurfs} from './actions/action';
+import styled from 'styled-components'
+
 
 
 function Smurfs(props){
