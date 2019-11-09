@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import "./App.css";
-import styles from './styles.css'
+// import styles from './styles.css';
 import Smurfs from "./Smurfs";
 
 
